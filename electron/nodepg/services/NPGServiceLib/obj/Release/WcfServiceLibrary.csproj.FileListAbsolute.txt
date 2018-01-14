@@ -1,0 +1,17 @@
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\WcfServiceLibrary.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\WcfServiceLibrary.pdb
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.SelfHost.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.WebHost.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Net.Http.Formatting.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\Newtonsoft.Json.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.xml
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.SelfHost.xml
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Web.Http.WebHost.xml
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\System.Net.Http.Formatting.xml
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\zh-Hans\System.Web.Http.resources.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\zh-Hans\System.Web.Http.SelfHost.resources.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\zh-Hans\System.Web.Http.WebHost.resources.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\obj\Release\WcfServiceLibrary.dll
+F:\Project\SognoAuthorization\WcfServiceLibrary\obj\Release\WcfServiceLibrary.pdb

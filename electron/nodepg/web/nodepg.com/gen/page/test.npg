@@ -1,0 +1,96 @@
+@with({
+	title:'testtt', 
+	links:[
+		{name:'jquery', link:'js/lib/jquery.js'},
+		{name:'html5shiv', link:'js/lib/html5shiv.js'},
+		{name:'respond', link:'js/lib/respond.min.js'}
+	], 
+	db:db
+})
+
+<html lang="zh-CN">
+<head>
+    <title>@title</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 引入 Bootstrap -->
+	<link href="js/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+	<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+	<!--[if lt IE 9]>
+	 <script src="js/lib/html5shiv.js"></script>
+	 <script src="js/lib/respond.min.js"></script>
+	<![endif]-->
+	<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+	<script src="js/lib/jquery.js"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="js/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+   <div class="row" >
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #dedef8;
+         box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat.
+         </p>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut. 
+         </p>
+      </div>
+
+      <div class="clearfix visible-xs"></div>
+
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #dedef8;
+         box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. 
+         </p>
+      </div>
+      <div class="col-xs-6 col-sm-3" 
+         style="background-color: #dedef8;box-shadow: 
+         inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+            enim ad minim 
+         </p>
+      </div>
+   </div>
+</div>
+<div class='container'>
+@db.use('test')
+@function insert(){
+	db.table('jslib').add({id:'jslib', text:'javascript librarys:', 	links:[
+		{name:'jquery', link:'js/lib/jquery.js'},
+		{name:'html5shiv', link:'js/lib/html5shiv.js'},
+		{name:'respond', link:'js/lib/respond.min.js'}
+	]});
+}
+@insert()
+<div>
+	javascript librarys:
+</div>
+<ul class="Task">
+@for(var i = 0, taskCount = links.length; i < taskCount; i ++){
+    var item = links[i];
+    <li class="glyphicon glyphicon-user">
+    <a href="@item.link" target="_blank">@item.name</a>
+    </li>
+}
+</ul>
+<div>
+</body>
+</html>
+

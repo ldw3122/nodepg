@@ -1,0 +1,12 @@
+@with({
+	rep:response
+})
+
+<script type="text/nsp">
+@function test(){
+	response.setHeader("Content-Type", "application/json");
+	
+	response.write('{"name":"test","text":"this is test"}');
+}
+@test()
+</script>

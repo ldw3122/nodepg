@@ -1,0 +1,20 @@
+@with(locals)
+<html>
+<head>
+    <title>@locals.title</title>
+</head>
+
+<body>
+
+<ul class="Task">
+@for(var taskIndex = 0, taskCount = taskList.length; taskIndex < taskCount; taskIndex ++){
+    var task = taskList[taskIndex];
+    <li class="@(taskIndex % 2 ? "Odd" : "Even")">
+    <a href="/task/@task.id">@task.name</a>
+    </li>
+}
+</ul>
+
+</body>
+</html>
+

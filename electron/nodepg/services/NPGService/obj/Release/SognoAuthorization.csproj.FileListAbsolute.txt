@@ -1,0 +1,10 @@
+F:\Project\SognoAuthorization\SognoAuthorization\bin\Release\SognoAuthorization.exe.config
+F:\Project\SognoAuthorization\SognoAuthorization\bin\Release\SognoAuthorization.exe
+F:\Project\SognoAuthorization\SognoAuthorization\bin\Release\SognoAuthorization.pdb
+F:\Project\SognoAuthorization\SognoAuthorization\bin\Release\WcfServiceLibrary.dll
+F:\Project\SognoAuthorization\SognoAuthorization\bin\Release\WcfServiceLibrary.pdb
+F:\Project\SognoAuthorization\SognoAuthorization\obj\Release\SognoAuthorization.csprojResolveAssemblyReference.cache
+F:\Project\SognoAuthorization\SognoAuthorization\obj\Release\SognoAuthorization.ProjectInstaller.resources
+F:\Project\SognoAuthorization\SognoAuthorization\obj\Release\SognoAuthorization.csproj.GenerateResource.Cache
+F:\Project\SognoAuthorization\SognoAuthorization\obj\Release\SognoAuthorization.exe
+F:\Project\SognoAuthorization\SognoAuthorization\obj\Release\SognoAuthorization.pdb

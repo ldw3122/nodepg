@@ -1,0 +1,3 @@
+D:\nodejs\node_modules\nodepg\bin\Microsoft.NodejsTools.WebRole.dll
+D:\project\nodepg_in_electron\nodepg\obj\Debug\nodepg.njsprojResolveAssemblyReference.cache
+D:\project\nodepg_in_electron\nodepg\bin\Microsoft.NodejsTools.WebRole.dll

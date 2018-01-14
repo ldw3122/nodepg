@@ -1,0 +1,60 @@
+{
+  "name": "nsp",
+  "version": "1.0.0",
+  "description": "Node Page Server",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
+  "keywords": [
+    "npg",
+    "Node Page",
+    "Node Page Server",
+    "Node Page Design"
+  ],
+  "author": "rockylin",
+  "license": "v1.0",
+  "bugs": {
+    "url": "https://github.com/electron/electron-quick-start/issues"
+  },
+  "homepage": "https://github.com/electron/electron-quick-start#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^1.0.1"
+  }
+ ,"listen"  : "8000"
+ ,"root"	: "./web"
+ ,"db"	    : "./db/"
+ ,"zip"		: "none"
+ ,"charset" : "utf8"
+ ,"debug"	: true
+ ,"scope"	: {}
+ ,"locals"	: {}
+ ,"build": {
+      "appId": "com.nodepg",
+      "copyright":"chuncans",
+      "productName":"Node Page Server",
+      "dmg":{
+        "background":"app.png",
+        "icon":"app.png",
+        "window":{
+          "x":100,
+          "y":100,
+          "width":500,
+          "height":300
+        }
+      },
+      "mac": {
+       "category": "public.app-category.developer-tools"
+       },
+      "squirrelWindows":{
+        "iconUrl":"/app.ico"
+       },
+      "win": {
+          "icon": "/app.ico"
+      }
+  }
+}

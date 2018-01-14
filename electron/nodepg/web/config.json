@@ -1,0 +1,18 @@
+{
+    "root": "./web/",
+    "db": "./db/",
+    "zip": "none",
+    "charset": "utf8",
+    "debug": true,
+    "scope": {},
+    "locals": {},
+    "default": "default",
+    "sites": {
+        "nodepg.com": {
+            "port": "3325"
+        },
+        "test.com": {
+            "port": "5233"
+        }
+    }
+}

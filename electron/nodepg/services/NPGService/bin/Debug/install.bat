@@ -1,0 +1,2 @@
+"SognoAuthorization.exe" -i
+pause

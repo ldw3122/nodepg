@@ -1,0 +1,168 @@
+/*!
+ * tools
+ * Copyright(c) 2011 Elmer Bulthuis <elmerbulthuis@gmail.com>
+ * MIT Licensed
+ */
+
+function extend(o) {
+    var argumentCount = arguments.length;
+    for (var argumentIndex = 1; argumentIndex < argumentCount; argumentIndex++) {
+        var argument = arguments[argumentIndex];
+        if(!argument) continue;
+        for (var argumentKey in argument) {
+            o[argumentKey] = argument[argumentKey];
+        }
+    }
+    return o;
+}
+
+function str() {
+    var buffer = '';
+    var argumentCount = arguments.length;
+    for(var argumentIndex = 0; argumentIndex < argumentCount; argumentIndex ++) {
+        var argument = arguments[argumentIndex];
+        if(typeof argument == 'undefined') continue;
+        if(argument === null) continue;
+        buffer += argument.toString();
+    }
+    return buffer;
+}
+    
+
+
+function regExpEncode(chars)    {
+    var expression = ""
+    var charCount = chars.length;
+    for(var charIndex = 0; charIndex < charCount; charIndex++) {
+        var charCode = chars.charCodeAt(charIndex);
+        var charCodeHex = charCode.toString(16);
+        while(charCodeHex.length < 2) charCodeHex = "0" + charCodeHex;
+        expression += "\\x" + charCodeHex;
+    }
+    return expression;
+}
+
+
+
+var htmlSpecial = {
+    34: '&quot;',
+    38: '&amp;',
+    //39: '&apos;',
+    60: '&lt;',
+    62: '&gt;',
+    160: '&nbsp;'
+};
+function htmlEncode(value) {
+    if(typeof value == 'object') return htmlAttributeEncode(value);
+    else return htmlLiteralEncode(value);
+}
+function htmlLiteralEncode(value) {
+    var buffer = '';
+    var charList = str(value);
+    var charCount = charList.length;
+    for (var charIndex = 0; charIndex < charCount; charIndex++) {
+        var charCode = charList.charCodeAt(charIndex);
+        if (charCode in htmlSpecial) {
+            buffer += htmlSpecial[charCode];
+        }
+        else {
+            //if (charCode < 32) continue;
+            if (charCode > 127) buffer += '&#' + charCode.toString() + ';';
+            else buffer += String.fromCharCode(charCode);
+        }
+    }
+    return buffer;
+}
+function htmlAttributeEncode(attributeSet) {
+    var attributeList = [];
+    for (var attributeName in attributeSet) {
+        var attributeValue = attributeSet[attributeName];
+        switch (attributeValue) {
+            case true:
+            attributeList.push('' + attributeName + '="' + attributeName + '"');
+            break;
+
+            case false:
+            break;
+
+            default:
+            attributeList.push('' + attributeName + '="' + htmlLiteralEncode(attributeValue) + '"');
+        }
+    }
+    return attributeList.join(' ');
+}
+
+
+//exports
+exports.extend = extend;
+exports.str = str;
+exports.htmlEncode = htmlEncode;
+exports.htmlLiteralEncode = htmlLiteralEncode;
+exports.htmlAttributeEncode = htmlAttributeEncode;
+exports.regExpEncode = regExpEncode;
+
+
+
+
+var fs = require('fs');
+
+function toString(data) {
+    if(typeof data == 'undefined') return '';
+    if(data === null) return '';
+    return data.toString();
+}
+
+exports.extend = extend;
+exports.toString = toString;
+
+
+
+
+function allDirectories(root, path){
+    var result = [];
+
+    path = path || '.';
+    
+    fs.readdirSync(root + '/' + path)
+    .filter(function(file){
+        var fileStat = fs.statSync(root + '/' + path + '/' + file);
+        return fileStat.isDirectory();
+    })
+    .forEach(function(file) {
+        result.push(path + '/' + file);
+        allDirectories(root, path + '/' + file)
+        .forEach(function(dir){
+            result.push(dir);
+        })
+        ;
+    })
+    ;
+
+    return result;
+}
+
+function allFiles(root, path){
+    var result = [];
+
+    path = path || '.';
+    
+    allDirectories(root, path)
+    .forEach(function(path){
+        fs.readdirSync(root + '/' + path)
+        .filter(function(file){
+            var fileStat = fs.statSync(root + '/' + path + '/' + file);
+            return fileStat.isFile();
+        })
+        .forEach(function(file) {
+            result.push(path + '/' + file);
+        })
+        ;
+    })
+    ;
+
+    return result;
+}
+
+exports.allDirectories = allDirectories;
+exports.allFiles = allFiles;
+
